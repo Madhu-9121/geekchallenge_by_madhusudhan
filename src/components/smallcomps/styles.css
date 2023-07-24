@@ -1,0 +1,122 @@
+/* sidebar styling */
+
+.side-nav-container {
+    position: fixed;
+    top: 12rem;
+    left: 0;
+    width: 22rem;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    overflow-y: auto;
+    z-index: 100;
+  }
+  
+  .sidebar-inner {
+    padding: 2rem;
+    max-height: 700px;
+    overflow-y: scroll;
+  }
+  
+  .sidebar-inner h3 {
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  
+  .checkBox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-transform: capitalize;
+  }
+  
+  .checkBox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(217, 217, 217);
+  }
+  
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  .checkBox input:checked ~ .checkmark {
+    background-color: rgb(16, 18, 20);
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .checkBox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .checkBox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .filter-checkbox {
+    list-style: none;
+    padding: 0 5% 2% 5%;
+  }
+  
+  /* styling for small screen search bar */
+  @media screen and (max-width: 560px) {
+    .search-bar {
+      padding: 10px;
+      width: auto;
+      gap: 10px;
+    }
+    .side-nav-inner {
+      height: 600px;
+    }
+    .search-bar input {
+      max-width: 250px;
+    }
+    .productCard {
+      align-items: center;
+      min-width: 300px;
+    }
+    .filter-icon {
+      display: grid;
+      place-items: center;
+    }
+  }
+  
+  /* Show the sidebar on medium and large screens */
+  @media (min-width: 768px) {
+    .sidebar-container {
+      display: block;
+    }
+  }
+  
+  /* product card checkout button */
+  
